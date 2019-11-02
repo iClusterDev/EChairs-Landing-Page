@@ -1,0 +1,51 @@
+// textline.scss
+// add a line to a text element on the left / right
+// if the text element has vertical orientation the
+// line is added on the top / bottom
+.text-line {
+  $line-width: 100px;
+  $line-height: 2px;
+  $line-distance: 1rem;
+  display: flex;
+  align-items: center;
+
+  &::before {
+    content: "";
+    display: none;
+    margin: 0 $line-distance;
+    width: $line-width;
+    height: $line-height;
+    background-color: rgba(51, 51, 51, 1);
+  }
+
+  &.text-line-left {
+    &::before {
+      display: block;
+      order: 0;
+    }
+  }
+
+  &.text-line-right {
+    &::before {
+      display: block;
+      order: 1;
+    }
+  }
+}
+
+.text-vertical {
+  &.text-line {
+    $line-width: 2px;
+    $line-height: 100px;
+    $line-distance: 1rem;
+    display: flex;
+    align-items: center;
+
+    &::before {
+      content: "";
+      margin: $line-distance 0;
+      width: $line-width;
+      height: $line-height;
+    }
+  }
+}
