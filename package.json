@@ -1,7 +1,7 @@
 {
-  "name": "devkit-static",
+  "name": "echairs-landing-page",
   "version": "1.0.0",
-  "description": "Sass Boilerplate to work on static webpages",
+  "description": "A Landing Page Design Concept on a Madeup Forniture Company",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -32,7 +32,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/iClusterDev/devkit-static.git"
+    "url": "git+https://github.com/iClusterDev/EChairs-Landing-Page.git"
   },
   "keywords": [
     "sass",
@@ -45,7 +45,7 @@
   "author": "iClusterDev",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/iClusterDev/devkit-static/issues"
+    "url": "https://github.com/iClusterDev/EChairs-Landing-Page/issues"
   },
-  "homepage": "https://github.com/iClusterDev/devkit-static#readme"
+  "homepage": "https://github.com/iClusterDev/EChairs-Landing-Page#readme"
 }
