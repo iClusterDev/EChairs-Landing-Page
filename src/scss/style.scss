@@ -1,7 +1,22 @@
-@import "./partials/variables";
+@import "./cluster-css/normalize";
+@import "./cluster-css/variables";
+@import "./cluster-css/typography";
 
 body {
-  background: $bg;
-  color: $color;
+  background: whitesmoke;
   padding: 2rem;
+}
+
+.primary,
+.secondary {
+  width: 50px;
+  height: 50px;
+}
+
+.primary {
+  background-color: $primary;
+}
+
+.secondary {
+  background-color: $secondary;
 }
