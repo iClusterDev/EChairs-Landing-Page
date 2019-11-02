@@ -28,7 +28,7 @@ The dist forder is constantly whatched. Don't touch it!
 You are now all set.
 Happy Dev! -->
 
-## Contributing
+<!-- ## Contributing
 
 If you find any issues, feel free to submit a pull request.
 
@@ -38,4 +38,4 @@ If you find any issues, feel free to submit a pull request.
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. -->
