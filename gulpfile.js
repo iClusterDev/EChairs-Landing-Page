@@ -32,8 +32,8 @@ const css = done => {
     .pipe(sourcemaps.init())
     .pipe(
       sass({
-        errorLogToConsole: true,
-        outputStyle: "compressed"
+        errorLogToConsole: true
+        // outputStyle: "compressed"
       })
     )
     .on("error", console.error.bind(console))
