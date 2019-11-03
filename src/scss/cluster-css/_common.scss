@@ -49,38 +49,6 @@ hr {
   }
 }
 
-a {
-  text-decoration: none;
-  letter-spacing: 1px;
-  font-weight: 700;
-  display: inline-flex;
-  align-items: center;
-  color: rgba(51, 51, 51, 0.5);
-  transition: color 0.2s;
-  .icon-left {
-    order: 0;
-    margin-right: 16px;
-    transition: transform 0.2s;
-  }
-
-  .icon-right {
-    order: 1;
-    margin-left: 16px;
-    transition: transform 0.2s;
-  }
-
-  &:hover {
-    color: rgba(51, 51, 51, 1);
-    .icon-left {
-      transform: translateX(8px);
-    }
-
-    .icon-right {
-      transform: translateX(8px);
-    }
-  }
-}
-
 img {
   display: block;
 }
@@ -111,26 +79,6 @@ img {
     padding: 0;
   }
 }
-
-// .box-shadow-5 {
-//   box-shadow: -25px 25px 50px 12.5px rgba(0, 0, 0, 0.15);
-// }
-
-// .box-shadow-4 {
-//   box-shadow: -12.5px 12.5px 25px 6.25px rgba(0, 0, 0, 0.15);
-// }
-
-// .box-shadow-3 {
-//   box-shadow: -6.25px 6.25px 12.5px 3.125px rgba(0, 0, 0, 0.15);
-// }
-
-// .box-shadow-2 {
-//   box-shadow: -3.125px 3.125px 6.25px 1.5px rgba(0, 0, 0, 0.15);
-// }
-
-// .box-shadow-1 {
-//   box-shadow: -2px 2px 3.125px 1px rgba(0, 0, 0, 0.15);
-// }
 
 .hoverable {
   transition: box-shadow 0.25s;

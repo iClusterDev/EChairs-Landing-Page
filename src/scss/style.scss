@@ -1,7 +1,11 @@
+// core
 @import "./cluster-css/normalize";
 @import "./cluster-css/variables";
 @import "./cluster-css/breakpoints";
 @import "./cluster-css/typography";
+@import "./cluster-css/common";
+@import "./cluster-css/icons";
+@import "./cluster-css/links";
 
 // helpers
 @import "./cluster-css/helpers/color";
@@ -10,4 +14,4 @@
 @import "./cluster-css/helpers/text";
 
 // components
-@import "./cluster-css/components/textline";
+@import "./cluster-css/components/navbar";
