@@ -1,11 +1,13 @@
-@import "./cluster-css/normalize.scss";
-@import "./cluster-css/breakpoints.scss";
-@import "./cluster-css/typography.scss";
+@import "./cluster-css/normalize";
+@import "./cluster-css/variables";
+@import "./cluster-css/breakpoints";
+@import "./cluster-css/typography";
 
 // helpers
-@import "./cluster-css/helpers/text";
-@import "./cluster-css/helpers/flex";
 @import "./cluster-css/helpers/color";
+@import "./cluster-css/helpers/flex";
+@import "./cluster-css/helpers/shadow";
+@import "./cluster-css/helpers/text";
 
 // components
-@import "./cluster-css/components/textline.scss";
+@import "./cluster-css/components/textline";
