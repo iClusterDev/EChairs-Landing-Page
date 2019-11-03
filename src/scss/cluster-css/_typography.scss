@@ -1,7 +1,11 @@
 // typography.scss
 // controls the main typography rules
-$font-family: "Montserrat";
-$font-url: "https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700,900";
+// ----------------------------------------------------------------------------
+$font-family: "Montserrat" !default;
+$font-url: "https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700,900" !default;
+$typescale-major-third: 3.052, 2.441, 1.953, 1.563, 1.25 !default;
+$typescale: $typescale-major-third !default;
+// ----------------------------------------------------------------------------
 
 :root {
   font-size: 15px;
@@ -21,7 +25,7 @@ body {
 }
 
 p {
-  margin-bottom: 1.25em;
+  margin-bottom: 1.25rem;
 }
 
 h1,
@@ -42,36 +46,15 @@ h1 {
 // FIXME
 // compute the typescale on the fly
 // inslude small .text-small
-$scale_1_250: 3.052, 2.441, 1.953, 1.563, 1.25;
 
 @for $heading-number from 1 to 6 {
   h#{$heading-number},
   .display-#{$heading-number} {
-    font-size: #{nth($scale_1_250, $heading-number)}em;
+    font-size: #{nth($typescale, $heading-number)}rem;
   }
 }
 
 small,
 .text_small {
-  font-size: 0.8em;
-}
-
-// ratio 1.175
-// FIXME
-// compute the typescale on the fly
-// inslude small .text-small
-@include for-tablet-down {
-  $scale_1_175: 2.24, 1.906, 1.622, 1.381, 1.175;
-
-  @for $heading-number from 1 to 6 {
-    h#{$heading-number},
-    .display-#{$heading-number} {
-      font-size: #{nth($scale_1_175, $heading-number)}em;
-    }
-  }
-
-  small,
-  .text_small {
-    font-size: 0.851em;
-  }
+  font-size: 0.8rem;
 }

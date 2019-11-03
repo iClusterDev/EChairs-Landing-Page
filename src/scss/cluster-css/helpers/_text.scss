@@ -27,3 +27,11 @@ $text-transforms: uppercase, lowercase, capitalize;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
 }
+
+$text-positions: left, center, right;
+
+@each $position in $text-positions {
+  .text-#{$position} {
+    text-align: #{$position};
+  }
+}

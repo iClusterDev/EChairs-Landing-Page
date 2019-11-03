@@ -1,3 +1,4 @@
+// breakpoints.scss
 @mixin for-mobile-portrait-down {
   @media screen and (max-width: 425px) {
     @content;
@@ -24,6 +25,37 @@
 
 @mixin for-large-laptop_down {
   @media screen and (max-width: 1440px) {
+    @content;
+  }
+}
+
+// mobile first?
+@mixin for-mobile-portrait-up {
+  @media screen and (min-width: 425px) {
+    @content;
+  }
+}
+
+@mixin for-mobile-landscape-up {
+  @media screen and (min-width: 640px) {
+    @content;
+  }
+}
+
+@mixin for-tablet-up {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin for-normal-laptop-up {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin for-large-laptop_up {
+  @media screen and (min-width: 1440px) {
     @content;
   }
 }
