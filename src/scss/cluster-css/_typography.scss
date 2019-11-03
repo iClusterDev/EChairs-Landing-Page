@@ -36,7 +36,6 @@ h1 {
 // FIXME
 // compute the typescale on the fly
 // inslude small .text-small
-
 @for $heading-number from 1 to 6 {
   h#{$heading-number},
   .display-#{$heading-number} {

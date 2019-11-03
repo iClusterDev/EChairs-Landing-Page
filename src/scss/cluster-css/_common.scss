@@ -68,18 +68,6 @@ img {
   position: relative;
 }
 
-.container {
-  width: 100%;
-  position: relative;
-  max-width: 1440px;
-  padding: 0 1rem;
-  margin: 0 auto;
-
-  @include for-mobile-portrait-down {
-    padding: 0;
-  }
-}
-
 .hoverable {
   transition: box-shadow 0.25s;
   &:hover {

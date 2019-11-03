@@ -3,15 +3,54 @@
 @import "./cluster-css/variables";
 @import "./cluster-css/breakpoints";
 @import "./cluster-css/typography";
+@import "./cluster-css/containers";
 @import "./cluster-css/common";
-@import "./cluster-css/icons";
-@import "./cluster-css/links";
 
 // helpers
+@import "./cluster-css/helpers/position";
+@import "./cluster-css/helpers/shadow";
 @import "./cluster-css/helpers/color";
 @import "./cluster-css/helpers/flex";
-@import "./cluster-css/helpers/shadow";
 @import "./cluster-css/helpers/text";
 
 // components
 @import "./cluster-css/components/navbar";
+@import "./cluster-css/components/link";
+@import "./cluster-css/components/icon";
+
+main {
+  margin-top: $navbar-height-min;
+
+  @include for-tablet-up {
+    margin-top: $navbar-height-max;
+  }
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @include for-tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 750px;
+
+    .section-image {
+      height: 100%;
+    }
+  }
+
+  .section-image {
+    height: 100%;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .section-content {
+    display: block;
+    padding: 3rem 2rem;
+  }
+}
