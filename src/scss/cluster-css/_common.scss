@@ -9,49 +9,49 @@ li {
   list-style: none;
 }
 
-hr {
-  border: none;
-  display: block;
-  height: 1px;
-  margin: 1rem 0 2.75rem;
-  background-color: rgb(204, 53, 53);
+// hr {
+//   border: none;
+//   display: block;
+//   height: 1px;
+//   margin: 1rem 0 2.75rem;
+//   background-color: rgb(204, 53, 53);
 
-  &.horizontal-bar {
-    width: 100px;
-    border-radius: 2px;
-    &.light {
-      height: 0.0625rem;
-    }
+//   &.horizontal-bar {
+//     width: 100px;
+//     border-radius: 2px;
+//     &.light {
+//       height: 0.0625rem;
+//     }
 
-    &.regular {
-      height: 0.125rem;
-    }
+//     &.regular {
+//       height: 0.125rem;
+//     }
 
-    &.medium {
-      height: 0.25rem;
-    }
+//     &.medium {
+//       height: 0.25rem;
+//     }
 
-    &.thick {
-      height: 0.5rem;
-    }
+//     &.thick {
+//       height: 0.5rem;
+//     }
 
-    &.left {
-      margin: 1rem 0 2.75rem auto;
-    }
+//     &.left {
+//       margin: 1rem 0 2.75rem auto;
+//     }
 
-    &.right {
-      margin: 1rem auto 2.75rem 0;
-    }
+//     &.right {
+//       margin: 1rem auto 2.75rem 0;
+//     }
 
-    &.center {
-      margin: 1rem auto 2.75rem;
-    }
-  }
-}
+//     &.center {
+//       margin: 1rem auto 2.75rem;
+//     }
+//   }
+// }
 
-img {
-  display: block;
-}
+// img {
+//   display: block;
+// }
 
 .fixed {
   display: block;
