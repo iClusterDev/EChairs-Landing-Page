@@ -2174,6 +2174,9 @@ img.icon {
   display: block;
   font-size: 32px; }
 
+header {
+  background-color: #ffffff; }
+
 main {
   margin-top: 64px; }
   @media screen and (min-width: 768px) {
@@ -2218,7 +2221,8 @@ section {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-flow: row wrap;
-  flex-flow: row wrap; }
+  flex-flow: row wrap;
+  padding-bottom: 4rem; }
   section .section-image {
     display: block;
     width: 100%;
@@ -2226,10 +2230,10 @@ section {
     -ms-flex-order: 1;
     order: 1; }
   section .section-title {
-    margin-top: 0; }
+    margin-top: 0;
+    letter-spacing: 1px; }
   section .section-content {
-    margin: 2rem 0;
-    padding: 0 1rem;
+    padding: 3rem 1rem 4rem;
     width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2252,8 +2256,72 @@ section {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0.5rem;
-  margin: 2rem 0; }
+  grid-template-columns: repeat(3, 1fr); }
+  #showcase .showcase-image {
+    margin: 0.25rem; }
+
+#slider-controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  #slider-controls button {
+    margin: 0.5rem; }
+
+button {
+  border: none; }
+  button:focus {
+    outline: none; }
+
+.btn {
+  cursor: pointer;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #ffffff;
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  background-color: #0d113f;
+  text-transform: uppercase;
+  font-weight: 700;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
+  .btn:hover {
+    background-color: #2735bd; }
+  .btn.btn-squared {
+    width: 64px;
+    height: 64px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center; }
+  .btn.btn-outline {
+    background-color: #ffffff;
+    color: #0d113f;
+    border: solid 1px #0d113f; }
+    .btn.btn-outline:hover {
+      background-color: #0d113f;
+      color: #ffffff; }
+  .btn.disabled {
+    color: rgba(51, 51, 51, 0.5);
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    cursor: default !important; }
 
 /*# sourceMappingURL=style.min.css.map */
