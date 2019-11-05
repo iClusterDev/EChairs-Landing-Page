@@ -18,9 +18,17 @@ $typescale-major-third: 3.052, 2.441, 1.953, 1.563, 1.25 !default;
 $typescale-minor-third: 2.488, 2.074, 1.728, 1.44, 1.2 !default;
 
 // typography variables
-$font-url: "https://fonts.googleapis.com/css?family=Montserrat:100,300,400,700,900" !default;
+$font-url: "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" !default;
 $font-stack: "Montserrat", "Helvetica Neue", sans-serif !default;
 $typescale: $typescale-minor-third !default;
+$font-weight-thin: 100;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+$font-weight-black: 900;
 
 // navbar variables
 $navbar-height-min: 64px;
