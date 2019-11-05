@@ -2289,14 +2289,14 @@ button {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  text-transform: uppercase;
   color: #ffffff;
   padding: 1rem 2rem;
+  font-weight: 700;
   border-radius: 2px;
   background-color: #0d113f;
-  text-transform: uppercase;
-  font-weight: 700;
-  -webkit-transition: background-color 0.2s;
-  transition: background-color 0.2s; }
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s; }
   .btn:hover {
     background-color: #2735bd; }
   .btn.btn-squared {
