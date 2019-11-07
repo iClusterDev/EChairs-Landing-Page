@@ -9,7 +9,7 @@
 // // helpers
 // @import "./cluster-css/helpers/position";
 // @import "./cluster-css/helpers/shadow";
-// @import "./cluster-css/helpers/color";
+@import "./cluster-css/helpers/color";
 // @import "./cluster-css/helpers/flex";
 // @import "./cluster-css/helpers/text";
 
@@ -143,11 +143,12 @@
 // }
 
 // BUTTON COMPONENT
-$btn-font-weight: 500;
+$btn-font-weight: 400;
 $btn-font-style: capitalize;
 $btn-font-size: 1rem;
-$btn-padding: 0.75rem 2.5rem; // don't know
-$btn-margin: 2px 1rem;
+// $btn-padding: 0.75rem 1rem; // don't know
+$btn-padding: 0 1rem; // don't know
+$btn-margin: 2px; //don't know
 $btn-color: white;
 $btn-border-radius: 2px;
 $btn-letter-spacing: 1px;
@@ -167,7 +168,9 @@ $btn-background-color: black;
   @include button-reset;
 
   // shared styles
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-weight: $btn-font-weight;
   text-transform: $btn-font-style;
   padding: $btn-padding;
@@ -202,12 +205,32 @@ $btn-background-color: black;
     width: 100%;
   }
 
-  .btn-icon,
-  i.btn-icon {
-    // margin: auto 8px auto 0;
-    // width: 1rem;
-    // height: 1rem;
-    font-size: 32px;
+  .btn-icon {
+    background-color: green;
+    padding: 0;
+    margin: 0;
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    // line-height: 100px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    &::before {
+      font-size: 24px;
+      // position: absolute;
+      // width: 48px;
+      // height: 48px;
+      // top: 0;
+      // left: 0;
+      // line-height: 100px;
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+      // background-color: blue;
+      // font-size: 1.5rem;
+      // margin-left: 1px;
+    }
   }
 }
 // $btn-background-color: $primary-color-dark;
