@@ -1970,13 +1970,13 @@ li {
   font-weight: 400;
   text-transform: uppercase;
   padding: 0.75rem 1.75rem;
-  margin: 1rem;
+  margin: 1rem 0;
   color: white;
   border-radius: 2px;
   letter-spacing: none;
   background-color: #1a237e;
-  -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.75);
-  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.85);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.85);
   border: solid 1px transparent;
   -webkit-transition: all 0.2s;
   transition: all 0.2s; }
@@ -1992,21 +1992,21 @@ li {
       .btn.disabled:hover:active {
         opacity: 0.2; }
   .btn:hover {
-    opacity: 0.8;
-    -webkit-box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.75); }
+    opacity: 0.9;
+    -webkit-box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.85);
+    box-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.85); }
     .btn:hover:active {
-      opacity: 0.6; }
+      opacity: 0.8; }
   .btn.btn-flat {
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
   .btn.btn-outlined {
-    background-color: transparent;
+    color: #1a237e;
+    border: solid 1px #1a237e;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: solid 1px #1a237e;
-    color: #1a237e;
-    font-weight: 500; }
+    font-weight: 500;
+    background-color: transparent; }
     .btn.btn-outlined:hover {
       background-color: #e9ebfa; }
       .btn.btn-outlined:hover:active {
