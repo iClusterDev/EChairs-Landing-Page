@@ -148,16 +148,17 @@ $btn-font-style: uppercase;
 $btn-font-size: 1rem;
 
 $btn-padding: 0.75rem 1.75rem; // don't know
-$btn-margin: 1rem; //don't know
+$btn-margin: 1rem 0; //don't know
 $btn-color: white;
 $btn-border-radius: 2px;
 $btn-letter-spacing: none;
 $btn-background-color: $primary-color;
 
-$btn-default-static-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.75);
-$btn-default-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.75);
+$btn-default-static-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.85);
+$btn-default-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.85);
 
 $btn-outlined-color: $primary-color;
+$btn-outlined-background-color: transparent;
 $btn-outlined-border: solid 1px $primary-color;
 $btn-outlined-font-weight: 500;
 
@@ -172,8 +173,8 @@ $btn-outlined-font-weight: 500;
 
 .btn {
   // scoped variables
-  $btn-hover-opacity: 0.8;
-  $btn-active-opacity: 0.6;
+  $btn-hover-opacity: 0.9;
+  $btn-active-opacity: 0.8;
   $btn-disabled-opacity: 0.2;
 
   // reset
@@ -221,11 +222,13 @@ $btn-outlined-font-weight: 500;
   }
 
   &.btn-outlined {
-    background-color: transparent;
-    box-shadow: none !important;
-    border: $btn-outlined-border;
     color: $btn-outlined-color;
+    border: $btn-outlined-border;
+    box-shadow: none !important;
     font-weight: $btn-outlined-font-weight;
+    background-color: $btn-outlined-background-color;
+
+    @debug "background: #{$btn-outlined-background-color}";
     &:hover {
       background-color: lighten($btn-background-color, 65);
       &:active {
