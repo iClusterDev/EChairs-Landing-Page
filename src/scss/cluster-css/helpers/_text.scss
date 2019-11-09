@@ -10,7 +10,6 @@ $font-weights: (
   "extrabold": 800,
   "black": 900
 );
-
 @each $name, $weight in $font-weights {
   .text-#{$name} {
     font-weight: $weight;
@@ -18,10 +17,16 @@ $font-weights: (
 }
 
 $text-transforms: uppercase, lowercase, capitalize;
-
 @each $transform in $text-transforms {
   .text-#{$transform} {
     text-transform: $transform;
+  }
+}
+
+$text-positions: left, center, right;
+@each $position in $text-positions {
+  .text-#{$position} {
+    text-align: #{$position};
   }
 }
 
@@ -29,12 +34,4 @@ $text-transforms: uppercase, lowercase, capitalize;
   display: inline-block;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-}
-
-$text-positions: left, center, right;
-
-@each $position in $text-positions {
-  .text-#{$position} {
-    text-align: #{$position};
-  }
 }

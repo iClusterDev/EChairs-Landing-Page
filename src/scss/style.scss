@@ -7,344 +7,201 @@
 @import "./cluster-css/common";
 
 // // helpers
-// @import "./cluster-css/helpers/position";
+@import "./cluster-css/helpers/position";
 @import "./cluster-css/helpers/shadow";
 @import "./cluster-css/helpers/color";
-// @import "./cluster-css/helpers/flex";
-// @import "./cluster-css/helpers/text";
+@import "./cluster-css/helpers/flex";
+@import "./cluster-css/helpers/text";
 
 // // components
-// @import "./cluster-css/components/navbar";
-// @import "./cluster-css/components/button";
-// @import "./cluster-css/components/link";
-// @import "./cluster-css/components/icon";
+@import "./cluster-css/components/navbar";
+@import "./cluster-css/components/button";
+@import "./cluster-css/components/link";
+@import "./cluster-css/components/icon";
 
-// header {
-//   background-color: #ffffff;
-// }
+header {
+  background-color: #ffffff;
+}
 
-// main {
-//   margin-top: $navbar-height-min;
+main {
+  margin-top: $navbar-height-min;
 
-//   @include for-tablet-up {
-//     margin-top: $navbar-height-max;
-//   }
-// }
+  @include for-tablet-up {
+    margin-top: $navbar-height-max;
+  }
+}
 
-// h1,
-// h2,
-// h3,
-// h4,
-// h5 {
-//   font-weight: $font-weight-medium;
-//   text-transform: capitalize;
-// }
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: $font-weight-medium;
+  text-transform: capitalize;
+}
 
-// hr {
-//   border: none;
-//   display: block;
-//   height: 1px;
-//   margin: 0.5rem 0 2rem;
-//   background-color: $text-color;
-
-//   &.horizontal-bar {
-//     width: 100px;
-//     border-radius: 2px;
-//     &.light {
-//       height: 0.0625rem;
-//     }
-
-//     &.regular {
-//       height: 0.125rem;
-//     }
-
-//     &.medium {
-//       height: 0.25rem;
-//     }
-
-//     &.thick {
-//       height: 0.5rem;
-//     }
-
-//     &.left {
-//       margin: 1rem 0 2.75rem auto;
-//     }
-
-//     &.right {
-//       margin: 1rem auto 2.75rem 0;
-//     }
-
-//     &.center {
-//       margin: 1rem auto 2.75rem;
-//     }
-//   }
-// }
-
-// img {
-//   display: block;
-//   width: 100%;
-// }
-
-// section {
-//   display: flex;
-//   align-items: center;
-//   flex-flow: row wrap;
-
-//   .section-image {
-//     display: block;
-//     width: 100%;
-//     order: 1;
-//   }
-
-//   .section-title {
-//     margin-top: 0;
-//     letter-spacing: 1px;
-//   }
-
-//   .section-content {
-//     padding: 4rem 1.5rem;
-//     width: 100%;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
-//     order: 2;
-//   }
-// }
-
-// #hero,
-// #showcase,
-// #trends {
-//   padding-bottom: 2rem;
-// }
-
-// #newsletter {
-//   // padding: 4rem 1rem;
-// }
-
-// #lightbox {
-//   display: grid;
-//   grid-template-columns: repeat(3, 1fr);
-//   margin-bottom: 1.25rem;
-
-//   .lightbox-image {
-//     margin: 0.25rem;
-//   }
-// }
-
-// #slider-controls {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-
-//   button {
-//     margin: 0.5rem;
-//   }
-// }
-
-// ---------------------------------------------------
-// BUTTON COMPONENT
-// ---------------------------------------------------
-// user properties
-$btn-font-weight: 400 !default;
-$btn-font-style: capitalize !default;
-$btn-background: $primary-color !default;
-$btn-border-radius: 2px !default;
-$btn-letter-spacing: 1px !default;
-
-@mixin button-reset {
-  padding: 0;
-  margin: 0;
+hr {
   border: none;
-  font: inherit;
-  color: inherit;
-  cursor: pointer;
-  outline: none;
-  position: relative;
-  text-decoration: none;
-  background-color: transparent;
-  display: inline-flex;
+  display: block;
+  height: 1px;
+  margin: 0.5rem 0 2rem;
+  background-color: $text-color;
+
+  &.horizontal-bar {
+    width: 100px;
+    border-radius: 2px;
+    &.light {
+      height: 0.0625rem;
+    }
+
+    &.regular {
+      height: 0.125rem;
+    }
+
+    &.medium {
+      height: 0.25rem;
+    }
+
+    &.thick {
+      height: 0.5rem;
+    }
+
+    &.left {
+      margin: 1rem 0 2.75rem auto;
+    }
+
+    &.right {
+      margin: 1rem auto 2.75rem 0;
+    }
+
+    &.center {
+      margin: 1rem auto 2.75rem;
+    }
+  }
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+
+  .section-image {
+    display: block;
+    width: 100%;
+    order: 1;
+  }
+
+  .section-title {
+    margin-top: 0;
+    letter-spacing: 1px;
+  }
+
+  .section-content {
+    padding: 4rem 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    order: 2;
+  }
+}
+
+#hero,
+#showcase,
+#trends {
+  padding-bottom: 2rem;
+}
+
+#newsletter {
+  // padding: 4rem 1rem;
+}
+
+#lightbox {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 1.25rem;
+
+  .lightbox-image {
+    margin: 0.25rem;
+  }
+}
+
+#slider-controls {
+  display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.btn {
-  // globals
-  $btn-color: lighten($btn-background, 100) !default;
-  $btn-border: solid 1px transparent;
-  $btn-margin: 1rem 2px !default; //don't know
-  $btn-padding: 1rem !default;
-  $btn-font-size: 1rem !default;
-  $btn-min-width: 4rem !default;
-  $btn-min-height: 2.5rem !default;
-  $btn-static-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.85) !default;
-  $btn-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.85) !default;
-  // reset
-  @include button-reset;
-
-  // default buttons
-  min-height: $btn-min-height;
-  min-width: $btn-min-width;
-  padding: 0 $btn-padding;
-  margin: $btn-margin;
-  color: $btn-color;
-  border: $btn-border;
-  box-shadow: $btn-static-shadow;
-  font-weight: $btn-font-weight;
-  border-radius: $btn-border-radius;
-  letter-spacing: $btn-letter-spacing;
-  text-transform: $btn-font-style;
-  background-color: $btn-background;
-  transition: all 0.2s;
-
-  // scoped variables
-  $btn-hover-opacity: 0.8;
-  $btn-active-opacity: 0.6;
-  $btn-disabled-opacity: 0.4;
-
-  // states - enabled by default
-  &.disabled {
-    opacity: $btn-disabled-opacity;
-    box-shadow: none !important;
-    cursor: default;
-    &:hover {
-      opacity: $btn-disabled-opacity;
-      box-shadow: none !important;
-      &:active {
-        opacity: $btn-disabled-opacity;
-      }
-    }
-  }
-  &:hover {
-    opacity: $btn-hover-opacity;
-    box-shadow: $btn-raised-shadow;
-    &:active {
-      opacity: $btn-active-opacity;
-    }
-  }
-
-  // flat buttons
-  &.flat {
-    box-shadow: none !important;
-  }
-
-  // outlined buttons
-  &.outlined {
-    box-shadow: none !important;
-    color: $btn-background;
-    border-color: $btn-background;
-    background-color: transparentize($btn-background, $amount: 1);
-    &:hover {
-      background-color: transparentize($btn-background, $amount: 0.8);
-      &:active {
-        background-color: transparentize($btn-background, $amount: 0.85);
-      }
-    }
-    &.disabled {
-      background-color: transparent !important;
-    }
-  }
-
-  // text buttons
-  &.text {
-    box-shadow: none !important;
-    padding: 0 calc(#{$btn-padding} / 2);
-    border: transparent !important;
-    color: $btn-background;
-    background-color: transparentize($btn-background, $amount: 1);
-    &:hover {
-      background-color: transparentize($btn-background, $amount: 0.8);
-      &:active {
-        background-color: transparentize($btn-background, $amount: 0.85);
-      }
-    }
-    &.disabled {
-      background-color: transparent !important;
-    }
-    &.large {
-      padding: 0 $btn-padding;
-    }
-  }
-
-  // block buttons
-  &.block {
-    width: 100%;
-  }
-
-  // rounded buttons
-  &.rounded {
-    border-radius: calc(2.5rem);
-  }
-
-  // large buttons
-  &.large {
-    padding: 0 calc(#{$btn-padding} * 2);
-    min-height: calc(#{$btn-min-height} * 1.25);
+  button {
+    margin: 0.5rem;
   }
 }
 
-// FORMS / INPUT FIELDS
+form {
+  display: block;
+  padding: 0 1rem;
+  margin-bottom: 1.25rem;
+  width: 100%;
+}
 
-// form {
-//   display: block;
-//   padding: 0 1rem;
-//   margin-bottom: 1.25rem;
-//   width: 100%;
-// }
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="time"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="tel"],
+input[type="number"],
+input[type="search"],
+textarea {
+  display: inline-block;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  margin: 0 0 0.5rem 0;
+  margin-bottom: 0.5rem;
+  border-radius: calc(2.5rem / 2);
+  background-color: #ffffff;
 
-// input[type="text"],
-// input[type="email"],
-// input[type="password"],
-// input[type="url"],
-// input[type="time"],
-// input[type="date"],
-// input[type="datetime"],
-// input[type="datetime-local"],
-// input[type="tel"],
-// input[type="number"],
-// input[type="search"],
-// textarea {
-//   display: inline-block;
-//   box-sizing: border-box;
-//   outline: none;
-//   border: none;
-//   width: 100%;
-//   height: 2.5rem;
-//   padding: 0 1.5rem;
-//   margin: 0 0 0.5rem 0;
-//   margin-bottom: 0.5rem;
-//   border-radius: calc(2.5rem / 2);
-//   background-color: #ffffff;
+  &::placeholder {
+    font-size: 0.9rem;
+    color: color("blue-grey", "lighten-3");
+  }
+}
 
-//   &::placeholder {
-//     font-size: 0.9rem;
-//     color: color("blue-grey", "lighten-3");
-//   }
-// }
+.input-group {
+  position: relative;
+  height: 4rem;
+  display: flex;
+  align-items: center;
 
-// .input-group {
-//   position: relative;
-//   height: 4rem;
-//   display: flex;
-//   align-items: center;
+  input {
+    margin: 0;
+  }
 
-//   input {
-//     margin: 0;
-//   }
+  .btn {
+    position: absolute;
+    right: 0;
+    height: 3rem;
+    width: 3rem;
+    border-radius: calc(3rem / 2);
+    padding: 0;
+    background-color: white;
+    color: black;
 
-//   .btn {
-//     position: absolute;
-//     right: 0;
-//     height: 3rem;
-//     width: 3rem;
-//     border-radius: calc(3rem / 2);
-//     padding: 0;
-//     background-color: white;
-//     color: black;
-
-//     i {
-//       display: block;
-//       line-height: 0;
-//     }
-//   }
-// }
+    i {
+      display: block;
+      line-height: 0;
+    }
+  }
+}

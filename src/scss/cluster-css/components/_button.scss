@@ -1,40 +1,149 @@
-// .btn {
-//   cursor: pointer;
-//   display: inline-flex;
-//   align-items: center;
-//   justify-content: center;
+/*
+button.scss
+classes:
+  - disabled
+  - outlined
+  - rounded
+  - block
+  - large
+  - text
+  - flat
+*/
 
-//   // ---------------------------
-//   color: white;
-//   padding: 1rem 2rem;
-//   border-radius: 2px;
-//   background-color: rgba(51, 51, 51, 1);
-//   text-transform: uppercase;
-//   font-weight: 700;
-//   // ---------------------------
+// user properties
+// $btn-font-weight: 400 !default;
+// $btn-font-style: capitalize !default;
+// $btn-background: $primary-color !default;
+// $btn-border-radius: 2px !default;
+// $btn-letter-spacing: 1px !default;
 
-//   &.fab {
-//     border-radius: 50%;
-//     position: absolute;
-//     padding: 0;
-//     margin: 1rem;
-//     width: 48px;
-//     height: 48px;
-//     background-color: rgb(255, 255, 255);
-//     color: rgba(51, 51, 51, 1);
+@mixin button-reset {
+  padding: 0;
+  margin: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  text-decoration: none;
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
-//     i {
-//       margin-top: 2px;
-//     }
+.btn {
+  // globals
+  $btn-color: lighten($btn-background, 100) !default;
+  $btn-border: solid 1px transparent;
+  $btn-margin: 0 2px 1rem !default; //don't know
+  $btn-padding: 1rem !default;
+  $btn-font-size: 1rem !default;
+  $btn-min-width: 4rem !default;
+  $btn-min-height: 2.5rem !default;
+  $btn-static-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.85) !default;
+  $btn-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.85) !default;
+  // reset
+  @include button-reset;
 
-//     @include for-mobile-portrait-down {
-//       margin: 1rem 0.5rem;
-//     }
-//   }
+  // default buttons
+  min-height: $btn-min-height;
+  min-width: $btn-min-width;
+  padding: 0 $btn-padding;
+  margin: $btn-margin;
+  color: $btn-color;
+  border: $btn-border;
+  box-shadow: $btn-static-shadow;
+  font-weight: $btn-font-weight;
+  border-radius: $btn-border-radius;
+  letter-spacing: $btn-letter-spacing;
+  text-transform: $btn-font-style;
+  background-color: $btn-background;
+  transition: all 0.2s;
 
-//   &.disabled {
-//     color: rgba(51, 51, 51, 0.5);
-//     box-shadow: none !important;
-//     cursor: default !important;
-//   }
-// }
+  // scoped variables
+  $btn-hover-opacity: 0.8;
+  $btn-active-opacity: 0.6;
+  $btn-disabled-opacity: 0.4;
+
+  // states - enabled by default
+  &.disabled {
+    opacity: $btn-disabled-opacity;
+    box-shadow: none !important;
+    cursor: default;
+    &:hover {
+      opacity: $btn-disabled-opacity;
+      box-shadow: none !important;
+      &:active {
+        opacity: $btn-disabled-opacity;
+      }
+    }
+  }
+  &:hover {
+    opacity: $btn-hover-opacity;
+    box-shadow: $btn-raised-shadow;
+    &:active {
+      opacity: $btn-active-opacity;
+    }
+  }
+
+  // flat buttons
+  &.flat {
+    box-shadow: none !important;
+  }
+
+  // outlined buttons
+  &.outlined {
+    box-shadow: none !important;
+    color: $btn-background;
+    border-color: $btn-background;
+    background-color: transparentize($btn-background, $amount: 1);
+    &:hover {
+      background-color: transparentize($btn-background, $amount: 0.8);
+      &:active {
+        background-color: transparentize($btn-background, $amount: 0.85);
+      }
+    }
+    &.disabled {
+      background-color: transparent !important;
+    }
+  }
+
+  // text buttons
+  &.text {
+    box-shadow: none !important;
+    padding: 0 calc(#{$btn-padding} / 2);
+    border: transparent !important;
+    color: $btn-background;
+    background-color: transparentize($btn-background, $amount: 1);
+    &:hover {
+      background-color: transparentize($btn-background, $amount: 0.8);
+      &:active {
+        background-color: transparentize($btn-background, $amount: 0.85);
+      }
+    }
+    &.disabled {
+      background-color: transparent !important;
+    }
+    &.large {
+      padding: 0 $btn-padding;
+    }
+  }
+
+  // block buttons
+  &.block {
+    width: 100%;
+  }
+
+  // rounded buttons
+  &.rounded {
+    border-radius: calc(2.5rem);
+  }
+
+  // large buttons
+  &.large {
+    padding: 0 calc(#{$btn-padding} * 2);
+    min-height: calc(#{$btn-min-height} * 1.25);
+  }
+}
