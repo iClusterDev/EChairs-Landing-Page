@@ -1,4 +1,6 @@
+// --------------------------------------------------------
 // color variables
+// --------------------------------------------------------
 @import "./colors";
 $primary-color: color("indigo", "darken-4") !default;
 $primary-color-light: lighten($primary-color, 15%) !default;
@@ -9,15 +11,21 @@ $warning-color: color("yellow", "base") !default;
 $error-color: color("red", "base") !default;
 $text-color: $primary-color-dark !default;
 
+// --------------------------------------------------------
 // links
+// --------------------------------------------------------
 $link-color-light: $primary-color !default;
 $link-color-dark: darken($link-color-light, 15%) !default;
 
+// --------------------------------------------------------
 // typography typescales
+// --------------------------------------------------------
 $typescale-major-third: 3.052, 2.441, 1.953, 1.563, 1.25 !default;
 $typescale-minor-third: 2.488, 2.074, 1.728, 1.44, 1.2 !default;
 
+// --------------------------------------------------------
 // typography variables
+// --------------------------------------------------------
 $font-url: "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" !default;
 $font-stack: "Montserrat", "Helvetica Neue", sans-serif !default;
 $typescale: $typescale-minor-third !default;
@@ -30,6 +38,17 @@ $font-weight-bold: 700;
 $font-weight-extra-bold: 800;
 $font-weight-black: 900;
 
+// --------------------------------------------------------
 // navbar variables
+// --------------------------------------------------------
 $navbar-height-min: 64px;
 $navbar-height-max: 80px;
+
+// --------------------------------------------------------
+// buttons variables
+// --------------------------------------------------------
+$btn-font-weight: 400 !default;
+$btn-font-style: capitalize !default;
+$btn-background: $primary-color !default;
+$btn-border-radius: 2px !default;
+$btn-letter-spacing: 1px !default;
