@@ -146,27 +146,11 @@
 // BUTTON COMPONENT
 // ---------------------------------------------------
 // user properties
-$btn-font-weight: 500 !default;
+$btn-font-weight: 400 !default;
 $btn-font-style: capitalize !default;
 $btn-background: $primary-color !default;
 $btn-border-radius: 2px !default;
 $btn-letter-spacing: 1px !default;
-
-// global properties
-$btn-color: lighten($btn-background, 100) !default;
-$btn-border: solid 1px transparent;
-$btn-margin: 1rem 2px !default; //don't know
-$btn-padding: 1rem !default;
-$btn-font-size: 1rem !default;
-$btn-min-width: 4rem !default;
-$btn-min-height: 2.5rem !default;
-
-// global properties outlined specific
-$btn-outlined-color: $btn-background !default;
-$btn-outlined-background: transparent !default;
-
-$btn-static-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.85); // don't know;
-$btn-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.85); // don't know;
 
 @mixin button-reset {
   padding: 0;
@@ -185,6 +169,16 @@ $btn-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.85); // don't know;
 }
 
 .btn {
+  // globals
+  $btn-color: lighten($btn-background, 100) !default;
+  $btn-border: solid 1px transparent;
+  $btn-margin: 1rem 2px !default; //don't know
+  $btn-padding: 1rem !default;
+  $btn-font-size: 1rem !default;
+  $btn-min-width: 4rem !default;
+  $btn-min-height: 2.5rem !default;
+  $btn-static-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.85) !default;
+  $btn-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.85) !default;
   // reset
   @include button-reset;
 
@@ -221,10 +215,8 @@ $btn-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.85); // don't know;
       }
     }
   }
-
   &:hover {
     opacity: $btn-hover-opacity;
-    // background-color: transparentize($btn-background, $amount: 0.6) !important;
     box-shadow: $btn-raised-shadow;
     &:active {
       opacity: $btn-active-opacity;
@@ -236,40 +228,41 @@ $btn-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.85); // don't know;
     box-shadow: none !important;
   }
 
+  // outlined buttons
   &.outlined {
-    color: $btn-outlined-color;
-    border-color: $btn-outlined-color;
     box-shadow: none !important;
-    background-color: $btn-outlined-background;
-
+    color: $btn-background;
+    border-color: $btn-background;
+    background-color: transparentize($btn-background, $amount: 1);
     &:hover {
-      background-color: lighten($btn-background, 65);
+      background-color: transparentize($btn-background, $amount: 0.8);
       &:active {
-        background-color: lighten($btn-background, 55);
+        background-color: transparentize($btn-background, $amount: 0.85);
       }
     }
-
     &.disabled {
       background-color: transparent !important;
     }
   }
 
+  // text buttons
   &.text {
-    color: $btn-outlined-color;
-    border: transparent !important;
     box-shadow: none !important;
-    background-color: $btn-outlined-background;
-    padding: 0 calc(1rem / 2) !important;
-
+    padding: 0 calc(#{$btn-padding} / 2);
+    border: transparent !important;
+    color: $btn-background;
+    background-color: transparentize($btn-background, $amount: 1);
     &:hover {
-      background-color: lighten($btn-background, 65);
+      background-color: transparentize($btn-background, $amount: 0.8);
       &:active {
-        background-color: lighten($btn-background, 55);
+        background-color: transparentize($btn-background, $amount: 0.85);
       }
     }
-
     &.disabled {
       background-color: transparent !important;
+    }
+    &.large {
+      padding: 0 $btn-padding;
     }
   }
 
@@ -281,6 +274,12 @@ $btn-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.85); // don't know;
   // rounded buttons
   &.rounded {
     border-radius: calc(2.5rem);
+  }
+
+  // large buttons
+  &.large {
+    padding: 0 calc(#{$btn-padding} * 2);
+    min-height: calc(#{$btn-min-height} * 1.25);
   }
 }
 
