@@ -142,66 +142,80 @@
 //   }
 // }
 
+// ---------------------------------------------------
 // BUTTON COMPONENT
-$btn-font-weight: 400;
-$btn-font-style: uppercase;
-$btn-font-size: 1rem;
+// ---------------------------------------------------
+// user properties
+$btn-font-weight: 500 !default;
+$btn-font-style: capitalize !default;
+$btn-background: $primary-color !default;
+$btn-border-radius: 2px !default;
+$btn-letter-spacing: 1px !default;
 
-$btn-padding: 0.75rem 1.75rem; // don't know
-$btn-margin: 1rem 0; //don't know
-$btn-color: white;
-$btn-border-radius: 2px;
-$btn-letter-spacing: none;
-$btn-background-color: $primary-color;
+// global properties
+$btn-color: lighten($btn-background, 100) !default;
+$btn-border: solid 1px transparent;
+$btn-margin: 1rem 2px !default; //don't know
+$btn-padding: 1rem !default;
+$btn-font-size: 1rem !default;
+$btn-min-width: 4rem !default;
+$btn-min-height: 2.5rem !default;
 
-$btn-default-static-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.85);
-$btn-default-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.85);
+// global properties outlined specific
+$btn-outlined-color: $btn-background !default;
+$btn-outlined-background: transparent !default;
 
-$btn-outlined-color: $primary-color;
-$btn-outlined-background-color: transparent;
-$btn-outlined-border: solid 1px $primary-color;
-$btn-outlined-font-weight: 500;
+$btn-static-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.85); // don't know;
+$btn-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.85); // don't know;
 
 @mixin button-reset {
   padding: 0;
+  margin: 0;
   border: none;
   font: inherit;
   color: inherit;
-  background-color: transparent;
   cursor: pointer;
+  outline: none;
+  position: relative;
+  text-decoration: none;
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
-  // scoped variables
-  $btn-hover-opacity: 0.9;
-  $btn-active-opacity: 0.8;
-  $btn-disabled-opacity: 0.2;
-
   // reset
   @include button-reset;
 
-  display: inline-block;
-  outline: none;
-  font-weight: $btn-font-weight;
-  text-transform: $btn-font-style;
-  padding: $btn-padding;
+  // default buttons
+  min-height: $btn-min-height;
+  min-width: $btn-min-width;
+  padding: 0 $btn-padding;
   margin: $btn-margin;
   color: $btn-color;
+  border: $btn-border;
+  box-shadow: $btn-static-shadow;
+  font-weight: $btn-font-weight;
   border-radius: $btn-border-radius;
   letter-spacing: $btn-letter-spacing;
-  background-color: $btn-background-color;
-  box-shadow: $btn-default-static-shadow;
-  border: solid 1px transparent;
+  text-transform: $btn-font-style;
+  background-color: $btn-background;
   transition: all 0.2s;
+
+  // scoped variables
+  $btn-hover-opacity: 0.8;
+  $btn-active-opacity: 0.6;
+  $btn-disabled-opacity: 0.4;
 
   // states - enabled by default
   &.disabled {
     opacity: $btn-disabled-opacity;
-    box-shadow: none;
+    box-shadow: none !important;
     cursor: default;
     &:hover {
       opacity: $btn-disabled-opacity;
-      box-shadow: none;
+      box-shadow: none !important;
       &:active {
         opacity: $btn-disabled-opacity;
       }
@@ -210,112 +224,65 @@ $btn-outlined-font-weight: 500;
 
   &:hover {
     opacity: $btn-hover-opacity;
-    box-shadow: $btn-default-raised-shadow;
+    // background-color: transparentize($btn-background, $amount: 0.6) !important;
+    box-shadow: $btn-raised-shadow;
     &:active {
       opacity: $btn-active-opacity;
     }
   }
 
   // flat buttons
-  &.btn-flat {
+  &.flat {
     box-shadow: none !important;
   }
 
-  &.btn-outlined {
+  &.outlined {
     color: $btn-outlined-color;
-    border: $btn-outlined-border;
+    border-color: $btn-outlined-color;
     box-shadow: none !important;
-    font-weight: $btn-outlined-font-weight;
-    background-color: $btn-outlined-background-color;
+    background-color: $btn-outlined-background;
 
-    @debug "background: #{$btn-outlined-background-color}";
     &:hover {
-      background-color: lighten($btn-background-color, 65);
+      background-color: lighten($btn-background, 65);
       &:active {
-        background-color: lighten($btn-background-color, 55);
+        background-color: lighten($btn-background, 55);
       }
     }
 
-    // FIXME
-    // add disabled state here
+    &.disabled {
+      background-color: transparent !important;
+    }
+  }
+
+  &.text {
+    color: $btn-outlined-color;
+    border: transparent !important;
+    box-shadow: none !important;
+    background-color: $btn-outlined-background;
+    padding: 0 calc(1rem / 2) !important;
+
+    &:hover {
+      background-color: lighten($btn-background, 65);
+      &:active {
+        background-color: lighten($btn-background, 55);
+      }
+    }
+
+    &.disabled {
+      background-color: transparent !important;
+    }
   }
 
   // block buttons
-  &.btn-block {
+  &.block {
     width: 100%;
   }
+
+  // rounded buttons
+  &.rounded {
+    border-radius: calc(2.5rem);
+  }
 }
-// $btn-background-color: $primary-color-dark;
-// $btn-background-hover: $primary-color-light;
-// $btn-text-color: #ffffff;
-// button {
-//   border: none;
-//   &:focus {
-//     outline: none;
-//   }
-// }
-
-// .btn {
-//   cursor: pointer;
-//   display: inline-flex;
-//   align-items: center;
-//   justify-content: center;
-//   text-transform: uppercase;
-//   color: $btn-text-color;
-//   padding: 1rem 2rem;
-//   font-weight: 700;
-//   border-radius: 2px;
-//   background-color: $btn-background-color;
-//   transition: all 0.2s;
-
-//   &:hover {
-//     background-color: $btn-background-hover;
-//   }
-
-//   &.btn-squared {
-//     width: 64px;
-//     height: 64px;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//   }
-
-//   &.btn-outline {
-//     background-color: $btn-text-color;
-//     color: $btn-background-color;
-//     border: solid 1px $btn-background-color;
-
-//     &:hover {
-//       background-color: $btn-background-color;
-//       color: #ffffff;
-//     }
-//   }
-
-//   // &.fab {
-//   //   border-radius: 50%;
-//   //   position: absolute;
-//   //   padding: 0;
-//   //   margin: 1rem;
-//   //   width: 48px;
-//   //   height: 48px;
-//   //   background-color: rgb(255, 255, 255);
-//   //   color: rgba(51, 51, 51, 1);
-
-//   //   i {
-//   //     margin-top: 2px;
-//   //   }
-
-//   //   @include for-mobile-portrait-down {
-//   //     margin: 1rem 0.5rem;
-//   //   }
-//   // }
-
-//   &.disabled {
-//     color: rgba(51, 51, 51, 0.5);
-//     box-shadow: none !important;
-//     cursor: default !important;
-//   }
-// }
 
 // FORMS / INPUT FIELDS
 
