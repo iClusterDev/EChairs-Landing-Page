@@ -10,40 +10,48 @@ classes:
   - flat
 */
 
-// user properties
-// $btn-font-weight: 400 !default;
-// $btn-font-style: capitalize !default;
-// $btn-background: $primary-color !default;
-// $btn-border-radius: 2px !default;
-// $btn-letter-spacing: 1px !default;
-
 @mixin button-reset {
-  padding: 0;
-  margin: 0;
-  border: none;
   font: inherit;
-  color: inherit;
   cursor: pointer;
   outline: none;
   position: relative;
-  text-decoration: none;
-  background-color: transparent;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
-.btn {
-  // globals
+.btn,
+a.btn,
+button.btn {
+  // user variables
+  $btn-font-weight: map-get($btn-variables, "btn-font-weight");
+  $btn-font-style: map-get($btn-variables, "btn-font-style");
+  $btn-background: map-get($btn-variables, "btn-background");
+  $btn-border-radius: map-get($btn-variables, "btn-border-radius");
+  $btn-letter-spacing: map-get($btn-variables, "btn-letter-spacing");
+
+  // shared variables
+  // FIXME
+  // a lot of variables here
+  // are unecessary
   $btn-color: lighten($btn-background, 100) !default;
   $btn-border: solid 1px transparent;
-  $btn-margin: 0 2px 1rem !default; //don't know
+  // FIXME
+  // the margin should be defined
+  // in a more sensible way?
+  $btn-margin: 0 2px 1rem !default;
   $btn-padding: 1rem !default;
   $btn-font-size: 1rem !default;
   $btn-min-width: 4rem !default;
   $btn-min-height: 2.5rem !default;
-  $btn-static-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.85) !default;
-  $btn-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.85) !default;
+  $btn-static-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.95) !default;
+  $btn-raised-shadow: 0 3px 5px 0px rgba(0, 0, 0, 0.95) !default;
+  $btn-default-hover: lighten($btn-background, 10);
+  $btn-default-active: lighten($btn-background, 20);
+  $btn-outlined-hover: lighten($btn-background, 50);
+  $btn-outlined-active: lighten($btn-background, 55);
+
   // reset
   @include button-reset;
 
@@ -61,48 +69,31 @@ classes:
   text-transform: $btn-font-style;
   background-color: $btn-background;
   transition: all 0.2s;
-
-  // scoped variables
-  $btn-hover-opacity: 0.8;
-  $btn-active-opacity: 0.6;
-  $btn-disabled-opacity: 0.4;
-
-  // states - enabled by default
-  &.disabled {
-    opacity: $btn-disabled-opacity;
-    box-shadow: none !important;
-    cursor: default;
-    &:hover {
-      opacity: $btn-disabled-opacity;
-      box-shadow: none !important;
-      &:active {
-        opacity: $btn-disabled-opacity;
-      }
-    }
-  }
   &:hover {
-    opacity: $btn-hover-opacity;
+    color: $btn-color;
     box-shadow: $btn-raised-shadow;
+    background-color: $btn-default-hover;
     &:active {
-      opacity: $btn-active-opacity;
+      background-color: $btn-default-active;
     }
   }
-
-  // flat buttons
-  &.flat {
+  &.disabled {
+    opacity: 40%;
     box-shadow: none !important;
+    background-color: $btn-background !important;
+    cursor: default;
   }
 
   // outlined buttons
   &.outlined {
-    box-shadow: none !important;
+    box-shadow: none;
     color: $btn-background;
     border-color: $btn-background;
-    background-color: transparentize($btn-background, $amount: 1);
+    background-color: transparent;
     &:hover {
-      background-color: transparentize($btn-background, $amount: 0.8);
+      background-color: $btn-outlined-hover;
       &:active {
-        background-color: transparentize($btn-background, $amount: 0.85);
+        background-color: $btn-outlined-active;
       }
     }
     &.disabled {
@@ -112,15 +103,15 @@ classes:
 
   // text buttons
   &.text {
-    box-shadow: none !important;
-    padding: 0 calc(#{$btn-padding} / 2);
-    border: transparent !important;
+    box-shadow: none;
     color: $btn-background;
-    background-color: transparentize($btn-background, $amount: 1);
+    padding: 0 calc(#{$btn-padding} / 2);
+    border-color: transparent;
+    background-color: transparent;
     &:hover {
-      background-color: transparentize($btn-background, $amount: 0.8);
+      background-color: $btn-outlined-hover;
       &:active {
-        background-color: transparentize($btn-background, $amount: 0.85);
+        background-color: $btn-outlined-active;
       }
     }
     &.disabled {
@@ -131,6 +122,17 @@ classes:
     }
   }
 
+  // large buttons
+  &.large {
+    padding: 0 calc(#{$btn-padding} * 2);
+    min-height: calc(#{$btn-min-height} * 1.25);
+  }
+
+  // flat buttons
+  &.flat {
+    box-shadow: none;
+  }
+
   // block buttons
   &.block {
     width: 100%;
@@ -138,12 +140,6 @@ classes:
 
   // rounded buttons
   &.rounded {
-    border-radius: calc(2.5rem);
-  }
-
-  // large buttons
-  &.large {
-    padding: 0 calc(#{$btn-padding} * 2);
-    min-height: calc(#{$btn-min-height} * 1.25);
+    border-radius: 4rem;
   }
 }

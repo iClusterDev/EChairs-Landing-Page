@@ -2,14 +2,14 @@
 // color variables
 // --------------------------------------------------------
 @import "./colors";
-$primary-color: color("indigo", "darken-4") !default;
-$primary-color-light: lighten($primary-color, 15%) !default;
+$primary-color: #3f5a7e !default;
 $primary-color-dark: darken($primary-color, 15%) !default;
+$primary-color-light: lighten($primary-color, 15%) !default;
 
 $success-color: color("green", "base") !default;
 $warning-color: color("yellow", "base") !default;
 $error-color: color("red", "base") !default;
-$text-color: $primary-color-dark !default;
+$off-black: rgba(0, 0, 0, 0.87) !default;
 
 // --------------------------------------------------------
 // links
@@ -47,8 +47,10 @@ $navbar-height-max: 80px;
 // --------------------------------------------------------
 // buttons variables
 // --------------------------------------------------------
-$btn-font-weight: 400 !default;
-$btn-font-style: capitalize !default;
-$btn-background: $primary-color !default;
-$btn-border-radius: 2px !default;
-$btn-letter-spacing: 1px !default;
+$btn-variables: (
+  "btn-font-weight": 400,
+  "btn-font-style": uppercase,
+  "btn-background": $primary-color,
+  "btn-border-radius": 2px,
+  "btn-letter-spacing": 1px
+);

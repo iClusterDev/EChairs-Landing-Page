@@ -45,7 +45,7 @@ hr {
   display: block;
   height: 1px;
   margin: 0.5rem 0 2rem;
-  background-color: $text-color;
+  background-color: $off-black;
 
   &.horizontal-bar {
     width: 100px;
@@ -118,9 +118,9 @@ section {
   padding-bottom: 2rem;
 }
 
-#newsletter {
-  // padding: 4rem 1rem;
-}
+// #newsletter {
+//   // padding: 4rem 1rem;
+// }
 
 #lightbox {
   display: grid;

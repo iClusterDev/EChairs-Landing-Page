@@ -7,11 +7,14 @@
   }
 }
 
+html {
+  color: $off-black;
+}
+
 body {
   font-family: $font-stack;
   font-weight: 300;
   line-height: 1.8;
-  color: $text-color;
 }
 
 p {
