@@ -46,11 +46,10 @@ $navbar-height-max: 80px;
 
 // --------------------------------------------------------
 // buttons variables
+// src\scss\cluster-css\components\_button.scss
 // --------------------------------------------------------
-$btn-variables: (
-  "btn-font-weight": 400,
-  "btn-font-style": uppercase,
-  "btn-background": $primary-color,
-  "btn-border-radius": 2px,
-  "btn-letter-spacing": 1px
-);
+$btn-font-weight: 400;
+$btn-font-style: capitalize;
+$btn-background: $primary-color;
+$btn-border-radius: 2px;
+$btn-letter-spacing: 1px;

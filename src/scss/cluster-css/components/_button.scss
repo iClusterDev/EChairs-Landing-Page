@@ -1,5 +1,7 @@
 /*
 button.scss
+dependencies:
+  - _variables.scss
 classes:
   - disabled
   - outlined
@@ -21,16 +23,12 @@ classes:
   text-decoration: none;
 }
 
+// FIXME
+// double check on materialize
+// the tap thing
 .btn,
 a.btn,
 button.btn {
-  // user variables
-  $btn-font-weight: map-get($btn-variables, "btn-font-weight");
-  $btn-font-style: map-get($btn-variables, "btn-font-style");
-  $btn-background: map-get($btn-variables, "btn-background");
-  $btn-border-radius: map-get($btn-variables, "btn-border-radius");
-  $btn-letter-spacing: map-get($btn-variables, "btn-letter-spacing");
-
   // shared variables
   // FIXME
   // a lot of variables here
@@ -42,7 +40,6 @@ button.btn {
   // in a more sensible way?
   $btn-margin: 0 2px 1rem !default;
   $btn-padding: 1rem !default;
-  $btn-font-size: 1rem !default;
   $btn-min-width: 4rem !default;
   $btn-min-height: 2.5rem !default;
   $btn-static-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.95) !default;

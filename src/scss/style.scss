@@ -1,23 +1,4 @@
-// core
-@import "./cluster-css/normalize";
-@import "./cluster-css/variables";
-@import "./cluster-css/breakpoints";
-@import "./cluster-css/typography";
-@import "./cluster-css/containers";
-@import "./cluster-css/common";
-
-// // helpers
-@import "./cluster-css/helpers/position";
-@import "./cluster-css/helpers/shadow";
-@import "./cluster-css/helpers/color";
-@import "./cluster-css/helpers/flex";
-@import "./cluster-css/helpers/text";
-
-// // components
-@import "./cluster-css/components/navbar";
-@import "./cluster-css/components/button";
-@import "./cluster-css/components/link";
-@import "./cluster-css/components/icon";
+@import "./cluster-css/cluster";
 
 header {
   background-color: #ffffff;

@@ -2130,6 +2130,8 @@ li {
 
 /*
 button.scss
+dependencies:
+  - _variables.scss
 classes:
   - disabled
   - outlined
@@ -2167,7 +2169,7 @@ button.btn {
   font-weight: 400;
   border-radius: 2px;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   background-color: #3f5a7e;
   -webkit-transition: all 0.2s;
   transition: all 0.2s; }
