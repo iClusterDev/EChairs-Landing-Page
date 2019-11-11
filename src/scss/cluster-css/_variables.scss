@@ -1,15 +1,25 @@
 // --------------------------------------------------------
-// color variables
+// color palette
 // --------------------------------------------------------
-@import "./colors";
-$primary-color: #3f5a7e !default;
-$primary-color-dark: darken($primary-color, 15%) !default;
-$primary-color-light: lighten($primary-color, 15%) !default;
-
-$success-color: color("green", "base") !default;
-$warning-color: color("yellow", "base") !default;
-$error-color: color("red", "base") !default;
+$primary-color: #b8336a;
+$secondary-color: #2e5266;
+$tertiary-color: #8d99ae;
+$link-color: #3a82ff;
+$text-color: rgba(0, 0, 0, 0.87) !default;
+// FIXME
+// replace off-black with appropriate class
+// whatchout the link colors
 $off-black: rgba(0, 0, 0, 0.87) !default;
+
+// --------------------------------------------------------
+// buttons variables
+// src/scss/cluster-css/components/_button.scss
+// --------------------------------------------------------
+$btn-background: $primary-color;
+$btn-font-style: capitalize;
+$btn-font-weight: 400;
+$btn-border-radius: 2px;
+$btn-letter-spacing: 1px;
 
 // --------------------------------------------------------
 // links
@@ -43,13 +53,3 @@ $font-weight-black: 900;
 // --------------------------------------------------------
 $navbar-height-min: 64px;
 $navbar-height-max: 80px;
-
-// --------------------------------------------------------
-// buttons variables
-// src/scss/cluster-css/components/_button.scss
-// --------------------------------------------------------
-$btn-font-weight: 400;
-$btn-font-style: capitalize;
-$btn-background: $primary-color;
-$btn-border-radius: 2px;
-$btn-letter-spacing: 1px;

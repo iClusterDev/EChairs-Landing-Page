@@ -1,31 +1,42 @@
-// color.scss
-// color classes including shades
-@each $color_name, $color in $colors {
-  @each $color_type, $color_value in $color {
-    @if $color_type == "base" {
-      .#{$color_name} {
-        background-color: $color_value !important;
+/*
+color.scss
+dependencies:
+  - _variables.scss
+*/
+
+$shades: 10, 15, 20, 25;
+$user-colors: (
+  "primary": $primary-color,
+  "secondary": $secondary-color,
+  "tertiary": $tertiary-color
+);
+
+// FIXME
+// make black white transparent
+// make dark light functions
+// make the auto-text color function
+
+@each $color_name, $color_value in $user-colors {
+  .#{$color-name} {
+    background-color: $color_value;
+    @each $shade in $shades {
+      &.lighten-#{$shade} {
+        background-color: lighten($color_value, $shade);
       }
-      .text-#{$color_name} {
-        color: $color_value !important;
-      }
-    } @else if $color_name != "shades" {
-      .#{$color_name}.#{$color_type} {
-        background-color: $color_value !important;
-      }
-      .text-#{$color_name}.text-#{$color_type} {
-        color: $color_value !important;
+      &.darken-#{$shade} {
+        background-color: darken($color_value, $shade);
       }
     }
   }
-}
-
-// Shade classes
-@each $color, $color_value in $shades {
-  .#{$color} {
-    background-color: $color_value !important;
-  }
-  .#{$color}-text {
-    color: $color_value !important;
+  .text-#{$color-name} {
+    color: $color_value;
+    @each $shade in $shades {
+      &.text-lighten-#{$shade} {
+        color: lighten($color_value, $shade);
+      }
+      &.text-darken-#{$shade} {
+        color: darken($color_value, $shade);
+      }
+    }
   }
 }
